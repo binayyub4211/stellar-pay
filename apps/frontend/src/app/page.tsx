@@ -10,11 +10,11 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white antialiased">
       <Hero />
+      <Developer />
       <Capabilities />
       <Architecture />
       <Testimonials />
       <Security />
-      <Developer />
       <Footer />
     </div>
   );
