@@ -211,7 +211,7 @@ export default function OverviewPage() {
                   <motion.div
                     className="h-full bg-gradient-to-r from-white/30 to-white/10"
                     initial={{ width: 0 }}
-                    animate={{ width: `${Math.random() * 40 + 60}%` }}
+
                     transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
                   />
                 </div>
