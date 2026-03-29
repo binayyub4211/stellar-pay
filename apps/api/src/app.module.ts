@@ -9,13 +9,14 @@ import { AuthModule } from './auth/auth.module';
 import { ApikeysModule } from './apikeys/apikeys.module';
 import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
 import { ThrottlerRedisGuard } from './rate-limiter/guards/throttler-redis.guard';
+import { WorkerModule } from './modules/worker/worker.module';
 
 @Module({
   imports: [
     HealthModule,
     TreasuryModule,
     AuthModule,
-    ApikeysModule,
+    WorkerModule,
     ThrottlerModule.forRoot({
       throttlers: [
         { name: 'short', ttl: 60000, limit: 100 },
