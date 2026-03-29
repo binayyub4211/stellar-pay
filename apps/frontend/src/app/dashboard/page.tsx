@@ -1,5 +1,6 @@
 'use client';
 
+import { useMemo } from 'react';
 import { motion } from "motion/react";
 import {
   TrendingUp,
@@ -48,6 +49,8 @@ const assets = [
   { symbol: "sBTC", balance: "12.4583", usd: "625,847.92", change: "+5.1%" },
   { symbol: "sETH", balance: "145.2341", usd: "232,251.75", change: "-1.2%" },
 ];
+
+const barWidths = useMemo(() => assets.map(() => Math.random() * 40 + 60), []);
 
 const transactions = [
   {
@@ -211,7 +214,7 @@ export default function OverviewPage() {
                   <motion.div
                     className="h-full bg-gradient-to-r from-white/30 to-white/10"
                     initial={{ width: 0 }}
-
+                    animate={{ width: `${barWidths[index]}%` }}
                     transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
                   />
                 </div>
